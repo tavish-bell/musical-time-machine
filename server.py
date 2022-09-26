@@ -1,17 +1,18 @@
 """Server for musical time machine """
 from os import environ
 
-import crud
 import spotipy
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from jinja2 import StrictUndefined
+from spotipy.oauth2 import SpotifyOAuth
+
+import crud
 from model import connect_to_db, db
 from spotify import (
     add_songs_to_spotify_playlist,
     build_spotify_playlist,
     generate_playlist_tracks,
 )
-from spotipy.oauth2 import SpotifyOAuth
 
 app = Flask(__name__)
 app.secret_key = "dev"
@@ -31,7 +32,6 @@ def create_user():
 
     email = request.form.get("email")
     password = request.form.get("password")
-    # print(email, password)
     user = crud.get_user_by_email(email)
 
     if user:
@@ -61,6 +61,7 @@ def user_login():
     else:
         # Log in user by storing the user email in session
         session["user_email"] = user.email
+        session["user_id"] = user.user_id
         flash("Logged In!")
 
     return redirect("/profile")
@@ -82,34 +83,37 @@ def show_profile():
 
 @app.route("/api/generate-playlist")
 def initiate_web_scrape():
-    OAUTH_AUTHORIZE_URL = "https://accounts.spotify.com/authorize"
-    OAUTH_TOKEN_URL = "https://accounts.spotify.com/api/token"
-    SPOTIPY_REDIRECT_URI = "http://example.com"
-    SPOTIPY_SCOPE = "playlist-modify-private"
+    """generate playlist given user selected date"""
+
+    spotipy_scope = "playlist-modify-private"
+    date = request.args.get("date")
+    print(
+        f"date in initiate_web_scrape /api/generate-playlist", "*" * 20, date, "*" * 20
+    )
 
     sp = spotipy.Spotify(
         auth_manager=SpotifyOAuth(
             client_id=environ["SPOTIPY_CLIENT_ID"],
             client_secret=environ["SPOTIPY_CLIENT_SECRET"],
             redirect_uri="https://example.com/callback",
-            scope=SPOTIPY_SCOPE,
+            scope=spotipy_scope,
             show_dialog=True,
             cache_path="token.txt",
         )
     )
-    date = request.args.get("date")
+
     songs_and_artists = generate_playlist_tracks(date)
     playlist = build_spotify_playlist(sp, songs_and_artists, date)
-    add_songs_to_spotify_playlist(sp, playlist, songs_and_artists)
-    # double-check / debug if necessary
+    print(f"session['user_id'] ={session['user_id']}")
+    add_songs_to_spotify_playlist(
+        sp, playlist, songs_and_artists, date, session["user_id"], db
+    )
+
     url = playlist["external_urls"]["spotify"]
     return redirect(url)
-
-    # url from temp.py -- url that will take user to spotify
-    # url = "https: //open.spotify.com/playlist/1rl8dWuLImIrRrOUT1pHmp"
-    # create empty playlist, add dict items in--
 
 
 if __name__ == "__main__":
     connect_to_db(app)
     app.run(host="0.0.0.0", debug=True)
+# p1 = Playlist.query.first()

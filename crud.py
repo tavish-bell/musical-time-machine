@@ -1,7 +1,9 @@
 """Create Replace Update Delete operations."""
 
 
-from model import Playlist, Track, User, connect_to_db
+import datetime
+
+from model import Playlist, Track, User, connect_to_db, db
 
 
 def create_user(email, password):
@@ -26,6 +28,26 @@ def get_user_by_email(email):
     return User.query.filter(User.email == email).first()
 
     # return a user with that email if it exists; otherwise return None
+
+
+def make_playlist(selected_date, user_id):
+    """Return playlist object"""
+    date_obj = datetime.datetime.strptime(selected_date, "%Y-%m-%d")
+    playlist = Playlist(selected_date=date_obj, user_id=user_id)
+
+    return playlist
+
+
+def make_track(song, artist):
+    """Return track object"""
+    track_title = song
+    track_artist = artist
+    track = Track(track_title=song, track_artist=artist)
+
+    return track
+
+
+# call func inside add_songs_to_spotify func inside spotify.py
 
 
 if __name__ == "__main__":

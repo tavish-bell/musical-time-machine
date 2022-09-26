@@ -22,6 +22,7 @@ class User(db.Model):
         return f"<User user_id={self.user_id} email={self.email}>"
 
 
+# stretch goal: get Spotify playlist id and integrate into playlists table
 class Playlist(db.Model):
     """a playlist"""
 
@@ -34,25 +35,25 @@ class Playlist(db.Model):
 
     user = db.relationship("User", back_populates="playlists")
 
-    # tracks = db.relationship("Track", back_populates="playlist")
+    tracks = db.relationship("Track", back_populates="playlist")
 
     def __repr__(self):
         return f"<Playlist playlist_id={self.playlist_id} date created={self.date_created}>"
 
 
-class PlaylistContents(db.Model):
-    """contents of playlist"""
+# class PlaylistContents(db.Model):
+#     """contents of playlist"""
 
-    # when this stuff is needed, add some relationships that will get playlist objects & tracks when querying for playlist contents --
-    # relationships will help when putting items into db, just need to create playlist object & track object for each song
-    # create playlist contents object, set playlist property to new playlist
-    # set tracks object to list of tracks
-    # session.add(playlist_contents)
+# when this stuff is needed, add some relationships that will get playlist objects & tracks when querying for playlist contents --
+# relationships will help when putting items into db, just need to create playlist object & track object for each song
+# create playlist contents object, set playlist property to new playlist
+# set tracks object to list of tracks
+# session.add(playlist_contents)
 
-    __tablename__ = "playlist_contents"
-    id = db.Column(db.Integer, primary_key=True)
-    playlist_id = db.Column(db.Integer, db.ForeignKey("playlists.playlist_id"))
-    track_id = db.Column(db.Integer, db.ForeignKey("tracks.track_id"))
+# __tablename__ = "playlist_contents"
+# id = db.Column(db.Integer, primary_key=True)
+# playlist_id = db.Column(db.Integer, db.ForeignKey("playlists.playlist_id"))
+# track_id = db.Column(db.Integer, db.ForeignKey("tracks.track_id"))
 
 
 class Track(db.Model):
@@ -65,8 +66,8 @@ class Track(db.Model):
     track_artist = db.Column(db.String, nullable=False)
     track_album = db.Column(db.String, nullable=True)
     track_year = db.Column(db.Integer, nullable=True)
-    # playlist_id = db.Column(db.Integer, db.ForeignKey("playlists.playlist_id"))
-    # playlist = db.relationship("Playlist", back_populates="tracks")
+    playlist_id = db.Column(db.Integer, db.ForeignKey("playlists.playlist_id"))
+    playlist = db.relationship("Playlist", back_populates="tracks")
 
     def __repr__(self):
         return (
