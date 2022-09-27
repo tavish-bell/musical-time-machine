@@ -87,9 +87,6 @@ def initiate_web_scrape():
 
     spotipy_scope = "playlist-modify-private"
     date = request.args.get("date")
-    print(
-        f"date in initiate_web_scrape /api/generate-playlist", "*" * 20, date, "*" * 20
-    )
 
     sp = spotipy.Spotify(
         auth_manager=SpotifyOAuth(

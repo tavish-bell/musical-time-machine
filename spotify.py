@@ -91,7 +91,6 @@ def add_songs_to_spotify_playlist(
 
     user_id = sp.current_user()["id"]
     song_uris = []
-    # make model.py playlist object
     db_playlist = make_playlist(selected_date, dB_user_id)
     for (song, artist) in song_and_artist.items():
         try:
@@ -104,7 +103,6 @@ def add_songs_to_spotify_playlist(
 
         except:
             pass
-        # could add title to db with note about not being found (if unable to improve accuracy in Sprint 2)
 
     sp.playlist_add_items(playlist_id=playlist["id"], items=song_uris)
     db.session.add(db_playlist)

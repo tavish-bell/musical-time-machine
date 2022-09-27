@@ -30,7 +30,8 @@ def get_user_by_email(email):
     # return a user with that email if it exists; otherwise return None
 
 
-def make_playlist(selected_date, user_id):
+# TODO:add optional param for msg, if it exists
+def make_playlist(selected_date, user_id, message):
     """Return playlist object"""
     date_obj = datetime.datetime.strptime(selected_date, "%Y-%m-%d")
     playlist = Playlist(selected_date=date_obj, user_id=user_id)
@@ -45,9 +46,6 @@ def make_track(song, artist):
     track = Track(track_title=song, track_artist=artist)
 
     return track
-
-
-# call func inside add_songs_to_spotify func inside spotify.py
 
 
 if __name__ == "__main__":
