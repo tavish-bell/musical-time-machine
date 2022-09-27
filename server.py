@@ -87,7 +87,7 @@ def initiate_web_scrape():
 
     spotipy_scope = "playlist-modify-private"
     date = request.args.get("date")
-
+    message = request.args.get("message")
     sp = spotipy.Spotify(
         auth_manager=SpotifyOAuth(
             client_id=environ["SPOTIPY_CLIENT_ID"],
@@ -101,9 +101,8 @@ def initiate_web_scrape():
 
     songs_and_artists = generate_playlist_tracks(date)
     playlist = build_spotify_playlist(sp, songs_and_artists, date)
-    print(f"session['user_id'] ={session['user_id']}")
     add_songs_to_spotify_playlist(
-        sp, playlist, songs_and_artists, date, session["user_id"], db
+        sp, playlist, songs_and_artists, date, session["user_id"], db, message
     )
 
     url = playlist["external_urls"]["spotify"]
@@ -113,4 +112,3 @@ def initiate_web_scrape():
 if __name__ == "__main__":
     connect_to_db(app)
     app.run(host="0.0.0.0", debug=True)
-# p1 = Playlist.query.first()

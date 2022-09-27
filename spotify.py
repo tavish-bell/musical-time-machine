@@ -18,13 +18,9 @@ def generate_playlist_tracks(date):
 
     return list of song titles/artists as dict
     """
-    print("running the function")
-    print(f"date = {date}")
+
     URL = f"https://www.billboard.com/charts/hot-100/{date}/"
-    # URL = https://www.billboard.com/charts/hot-100/11-16-1989/
-    print(f"URL = {URL}")
     response = requests.get(URL)
-    print(f"response: {response}")
     # raw html content
     billboard_data = response.text
     # specifying html parser
@@ -42,33 +38,7 @@ def generate_playlist_tracks(date):
     return song_and_artist
 
 
-generate_playlist_tracks("11-16-1989")
-
-
-def add_playlist_to_database(playlist_dict):
-    playlist = playlist_dict
-    # print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    # print(playlist)
-
-    json_dict = json.dumps(playlist)
-    print(json_dict)
-
-    # with open("playlist.json", "w") as outfile:
-    # json.dump(playlist, outfile)
-
-    # sticks it into playlist table in model.py
-
-
-# add_playlist_to_database(generate_playlist_tracks(testing))
-
-
-def add_song_and_artist_list_to_database(song_and_artist_dict):
-    # come back to this later -- pass in return from func above
-    # put it into playlist_contents table in model.py
-    pass
-
-
-def build_spotify_playlist(sp, song_and_artist, date):
+def build_spotify_playlist(sp, songs_and_artists, date):
     """
     generate playlist from song data using Spotify API
 
@@ -86,12 +56,12 @@ def build_spotify_playlist(sp, song_and_artist, date):
 
 
 def add_songs_to_spotify_playlist(
-    sp, playlist, song_and_artist, selected_date, dB_user_id, db
+    sp, playlist, song_and_artist, selected_date, dB_user_id, db, message
 ):
 
     user_id = sp.current_user()["id"]
     song_uris = []
-    db_playlist = make_playlist(selected_date, dB_user_id)
+    db_playlist = make_playlist(selected_date, dB_user_id, message=message)
     for (song, artist) in song_and_artist.items():
         try:
             result = sp.search(q=f"track:{song} artist:{artist}", type="track")
