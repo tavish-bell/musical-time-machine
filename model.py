@@ -30,7 +30,7 @@ class Playlist(db.Model):
 
     playlist_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     selected_date = db.Column(db.DateTime)
-    # message = db.Column(db.String)
+    message = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
 
     user = db.relationship("User", back_populates="playlists")
