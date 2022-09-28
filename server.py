@@ -1,16 +1,19 @@
 """Server for musical time machine """
+import random
 from os import environ
 
 import spotipy
-from flask import (Flask, flash, jsonify, redirect, render_template, request,
-                   session)
+from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from jinja2 import StrictUndefined
 from spotipy.oauth2 import SpotifyOAuth
 
 import crud
 from model import connect_to_db, db
-from spotify import (add_songs_to_spotify_playlist, build_spotify_playlist,
-                     generate_playlist_tracks)
+from spotify import (
+    add_songs_to_spotify_playlist,
+    build_spotify_playlist,
+    generate_playlist_tracks,
+)
 
 app = Flask(__name__)
 app.secret_key = "dev"
@@ -106,12 +109,19 @@ def initiate_web_scrape():
     url = playlist["external_urls"]["spotify"]
     return redirect(url)
 
-@app.route("/view-existing-playlists")
+
+# TODO: find out if this is right
+
+
+# def change_display():
+#     """change display from input to carousel"""
+# select random msg from playlists table
+# select_msg =
+
+
+# @app.route("/view-existing-playlists")
 # page where user views existing playlists
 # run query to show existing playlist objects for user
-
-
-
 
 
 if __name__ == "__main__":

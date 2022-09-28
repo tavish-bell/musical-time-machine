@@ -1,14 +1,16 @@
-document.querySelector("#user-date").addEventListener("submit", (evt) => {
+document.querySelector("#top-div").addEventListener("submit", (evt) => {
   evt.preventDefault();
 
-  const date = evt.target.querySelector("input").value;
+  // const date = evt.target.querySelector("input").value;
 
-  fetch("/api/generate-playlist?" + "date=" + date)
+  fetch("/api/generate-playlist?")
+    // fetching msg data from Playlist table to display
     .then((res) => {
       res.json();
     })
     .then((json) => {
-      // where updating DOM would happen / next steps
+      // set top div to None, set bottom div to block
+      // update DOM with info retrieved from fetch
       console.log(json);
     });
 });
