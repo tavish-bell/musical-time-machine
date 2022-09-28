@@ -30,9 +30,6 @@ def get_user_by_email(email):
     # return a user with that email if it exists; otherwise return None
 
 
-# TODO:add optional param for msg, if it exists
-
-
 def make_playlist(selected_date, user_id, message):
     """Return playlist object"""
     date_obj = datetime.datetime.strptime(selected_date, "%Y-%m-%d")
