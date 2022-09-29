@@ -22,19 +22,19 @@
 <div id="top-div">
 <h1>Profile page</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed tempus urna et pharetra pharetra massa massa. Et ultrices neque ornare aenean euismod elementum.</p>
-<h2>Select a date</h2>
+
 <!-- commented out for testing/debugging, code does work and is correct -->
 <!-- <form id="user-date" method="get" action="/api/generate-playlist"> -->
 <!-- code below is there for testing -->
   <form id="user-date">
+  <h2>Select a date</h2>
   <p>Date <input id="date" type="date" name="date" 
     min="1958-08-04" max="2022-09-19">
     </p>
 <h2>What is this date's significance?</h2>
   <input id="message" type="text" name="message" placeholder="the day we first met"/>
   <br>
-  <!-- value = "lets go" removed from submit button in order to test-->
-    <input type="submit" />
+    <input type="submit" value = "lets go" />
   </p>
 </form>
 </div>
@@ -45,8 +45,8 @@
 <br>
 <br>
 <br>
-<section class="carousel-section" id="musical-messages">
-  <a id="finished-playlist">FINISHED PLAYLIST</a>
+<section class="carousel-section" id="musical-messages" style="display:none;">
+  <a id="finished-playlist" target="_blank" style="display:none;">FINISHED PLAYLIST</a>
   <div id="carousel" class="carousel slide" data-ride="false">
     <div class="carousel-inner">
       <div class="carousel-item active container-fluid">
