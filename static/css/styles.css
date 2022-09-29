@@ -1,8 +1,8 @@
 body {
     font-family: "Montserrat";
     text-align: center;
-    /* padding: 0;
-    margin: 0; */
+    margin: 0;
+    
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -12,6 +12,7 @@ body {
   p {
     color: #8f8f8f;
   }
+
   
   /* Headings */
   
@@ -125,8 +126,6 @@ body {
   }
 
 
-
-
   /* form submit button  */
 
   .form-submit-button {
@@ -155,3 +154,13 @@ body {
     text-decoration: none;
   }
   
+
+
+   /* hr {
+      border-style: none;
+      border-top-style: dotted;
+      border-width: 6px;
+      color: #EAF6F6;
+      width: 4%;
+      margin: auto;
+  } */

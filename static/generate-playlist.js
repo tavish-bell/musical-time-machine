@@ -3,6 +3,7 @@ document.querySelector("#user-date").addEventListener("submit", (evt) => {
   document.querySelector("#user-date").style.display = "none";
   document.querySelector("#header-text").style.display = "none";
   document.querySelector("#musical-messages").style.display = "block";
+  document.querySelector("#top-div-heading").style.display = "none";
 
   const formObject = {
     date: document.querySelector("#date").value,
