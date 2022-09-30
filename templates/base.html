@@ -8,6 +8,12 @@
     <!-- Favicon -->
     <link rel="icon" href="/static/css/favicon.ico" />
 
+    <!-- Font Awesome  -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
+    ></script>
+
     <!-- Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,6 +52,7 @@
 
     {% block head %}{% endblock %}
   </head>
+
   <body>
     {% for msg in get_flashed_messages() %}
     <p class="flash-msg">{{ msg }}</p>

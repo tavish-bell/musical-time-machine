@@ -1,26 +1,69 @@
-{% extends 'base.html' %} {% block title %}Musical Time Machine Home{% endblock
-%} {% block body %}
-<h1>Welcome!</h1>
+{% extends 'base.html' %}{% block title %} {% endblock %} {%block body %}
 
-<h2>Create an Account</h2>
-<form action="/users" method="POST">
-  <p>Email <input type="text" name="email" /></p>
+<div class="home-top-container">
+  <img class="top-cloud" src="/static/css/images/cloud.png" alt="cloud-img" />
+  <h1 id="top-div-heading">Musical Time Machine</h1>
+  <img
+    class="bottom-cloud"
+    src="/static/css/images/cloud.png"
+    alt="cloud-img"
+  />
+  <img
+    class="mountain"
+    src="/static/css/images/mountain.png"
+    alt="mountain-img"
+  />
+</div>
 
-  <p>Password <input type="password" name="password" /></p>
+<div class="middle-container">
+  <h2>About the Project</h2>
+  <p class="about-the-project">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <hr>
+  
+  <div class="create-account">
+  <h5>Create an Account</h5>
+  <form action="/users" method="POST">
+    <p>Email <input type="text" name="email" /></p>
+    <p>Password <input type="password" name="password" /></p>
+    <p>
+      <input type="submit" />
+    </p>
+  </form>
+</div>
 
-  <p>
-    <input type="submit" />
-  </p>
-</form>
+  <div class="log-in">
+  <h5>Log In</h5>
+  <form action="/login" method="POST">
+    <p>Email <input type="text" name="email" /></p>
+    <p>Password <input type="password" name="password" /></p>
+    <p>
+      <input type="submit" />
+    </p>
+  </form>
+</div>
+</div>
 
-<h2>Log In</h2>
-<form action="/login" method="POST">
-  <p>Email <input type="text" name="email" /></p>
+<!-- LOGIN / CREATE ACCOUNT
+  <div>
 
-  <p>Password <input type="password" name="password" /></p>
+</div> -->
 
-  <p>
-    <input type="submit" />
-  </p>
-</form>
+
+
+
+
+
+
+
+<div class="footer-container">
+
+  <i class="social-icon fab fa-facebook-f"></i>
+  <i class="social-icon fab fa-twitter"></i>
+  <i class="social-icon fab fa-instagram"></i>
+  <i class="social-icon fas fa-envelope"></i>
+  <p class="copyright">© 2022 Tavish Bell.</p>
+</div>
+</body>
+</html>
+
 {% endblock %}

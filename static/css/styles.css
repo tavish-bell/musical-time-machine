@@ -1,7 +1,17 @@
+  /* Elements */
+
+html {
+  margin:0;
+  padding:0;
+  /* background-color: #D9F8C4; */
+}
+
 body {
     font-family: "Montserrat";
     text-align: center;
-    margin: 0;
+    height: 100%;
+    background-color: #D9F8C4
+    
     
   }
   
@@ -49,9 +59,8 @@ body {
   }
 
 
-  
   /* Containers */
-  
+
   .container-fluid{
     padding: 7% 15%;
   }
@@ -82,14 +91,34 @@ body {
     font-family: 'Sacramento', cursive;
     font-size: 5.625rem;
     margin: 50px auto 0 auto;
+    padding-top: 100px;
     
   }
 
-  /* form components  */
+  .middle-container {
+    background-color: #F9F9C5;
+    margin: 100px 0;
+    
+}
+
+.about-the-project {
+  width: 40%;
+  text-align: center;
+  margin: auto;
+}
+
+
+.footer-container {
+  background-color: #F37878;
+  padding: 50px 0 20px;
+  
+  
+}
+
+  /* Form Components  */
   .date-selection {
     width: 50%;
     margin-top: 50px;
-    margin-right: 70px;
     margin-bottom: 20px;
     text-align: left;
     display: inline-block;
@@ -98,7 +127,6 @@ body {
   .message-input {
     width: 50%;
     margin-top: 50px;
-    margin-right: 70px;
     margin-bottom: 20px;
     text-align: left;
     display: inline-block;
@@ -110,9 +138,7 @@ body {
  }
 
 
-
-
-  /* images */
+  /* Images */
   .date-img {
     width: 25%;
     border-radius: 180px; 
@@ -123,10 +149,25 @@ body {
   .note-img {
     width: 22%;
     float: right;
+    margin-right: 50px;
   }
 
+  .top-cloud {
+    position: absolute;
+    right: 300px;
+    top: 40px;
+    
+}
 
-  /* form submit button  */
+.bottom-cloud {
+    position: absolute;
+    left: 250px;
+    bottom: 300px;
+}
+
+
+
+  /* Form Submit Button  */
 
   .form-submit-button {
     background: #11cdd4;
@@ -154,13 +195,33 @@ body {
     text-decoration: none;
   }
   
+  .footer-link:hover {
+    color: #FFB4B4;
+}
+
+.copyright {
+    color: #FFB4B4;
+    font-size: 0.75rem;
+    padding: 20px 0;
+
+    
+
+}
+/* Icons  */
+.social-icon {
+  margin: 20px 10px;
+}
+
+.social-icon:hover{
+  color: #F7EC09
+}
 
 
-   /* hr {
-      border-style: none;
-      border-top-style: dotted;
-      border-width: 6px;
-      color: #EAF6F6;
-      width: 4%;
-      margin: auto;
-  } */
+hr {
+  border-style: none;
+  border-top-style: dotted;
+  border-width: 6px;
+  color: #EAF6F6;
+  width: 4%;
+  margin: auto;
+}
