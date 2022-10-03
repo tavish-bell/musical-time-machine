@@ -3,7 +3,6 @@
 html {
   margin:0;
   padding:0;
-  /* background-color: #D9F8C4; */
 }
 
 body {
@@ -15,8 +14,13 @@ body {
     
   }
   
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h6 {
     font-family: "Montserrat-Bold";
+  }
+
+  h5 {
+    font-family: 'Sacramento', cursive;
+    font-size: 2rem;
   }
   
   p {
@@ -90,10 +94,11 @@ body {
     color: #66BFBF;
     font-family: 'Sacramento', cursive;
     font-size: 5.625rem;
-    margin: 50px auto 0 auto;
+    margin: 0 auto 0 auto;
     padding-top: 100px;
     
   }
+/* middle container  */
 
   .middle-container {
     background-color: #F9F9C5;
@@ -101,19 +106,44 @@ body {
     
 }
 
+
 .about-the-project {
   width: 40%;
   text-align: center;
-  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.create-account {
+  display: inline-block;
+  margin-right: 300px;
+  
+}
 
+.create-acct-form{
+  text-align: right;
+
+}
+
+.login-form {
+  text-align: right;
+}
+
+.log-in {
+  display: inline-block;
+}
+
+/* footer  */
 .footer-container {
   background-color: #F37878;
   padding: 50px 0 20px;
   
   
 }
+
+
 
   /* Form Components  */
   .date-selection {
@@ -162,7 +192,17 @@ body {
 .bottom-cloud {
     position: absolute;
     left: 250px;
-    bottom: 300px;
+    bottom: 200px;
+}
+
+/* Loading gif */
+
+.loading-gif {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  border: 0;
+  width: 22%;
+ 
 }
 
 
@@ -194,6 +234,35 @@ body {
     background-image: linear-gradient(to bottom, #30e3cb,  #2bc4ad);
     text-decoration: none;
   }
+
+  .home-submit-btn {
+    background: #11cdd4;
+    background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+    background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: 'Montserrat', 'sans-serif';
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+
+  }
+
+  .home-submit-btn:hover {
+    background: #30e3cb;
+    background-image: -webkit-linear-gradient(top, #30e3cb,  #2bc4ad);
+    background-image: -moz-linear-gradient(top, #30e3cb,  #2bc4ad);
+    background-image: -ms-linear-gradient(top, #30e3cb,  #2bc4ad);
+    background-image: -o-linear-gradient(top, #30e3cb,  #2bc4ad);
+    background-image: linear-gradient(to bottom, #30e3cb,  #2bc4ad);
+    text-decoration: none;
+  }
+
   
   .footer-link:hover {
     color: #FFB4B4;

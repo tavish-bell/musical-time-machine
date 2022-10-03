@@ -4,6 +4,8 @@ document.querySelector("#user-date").addEventListener("submit", (evt) => {
   document.querySelector("#header-text").style.display = "none";
   document.querySelector("#musical-messages").style.display = "block";
   document.querySelector("#top-div-heading").style.display = "none";
+  document.querySelector("#loading-gif").style.display = "block";
+  document.querySelector("#top-section").style.display = "none";
 
   const formObject = {
     date: document.querySelector("#date").value,
@@ -20,5 +22,6 @@ document.querySelector("#user-date").addEventListener("submit", (evt) => {
       console.log(json);
       document.querySelector("#finished-playlist").href = json.spotify_url;
       document.querySelector("#finished-playlist").style.display = "block";
+      document.querySelector("#loading-gif").style.display = "none";
     });
 });

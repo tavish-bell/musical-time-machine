@@ -3,17 +3,15 @@ import random
 from os import environ
 
 import spotipy
-from flask import Flask, flash, jsonify, redirect, render_template, request, session
+from flask import (Flask, flash, jsonify, redirect, render_template, request,
+                   session)
 from jinja2 import StrictUndefined
 from spotipy.oauth2 import SpotifyOAuth
 
 import crud
 from model import connect_to_db, db
-from spotify import (
-    add_songs_to_spotify_playlist,
-    build_spotify_playlist,
-    generate_playlist_tracks,
-)
+from spotify import (add_songs_to_spotify_playlist, build_spotify_playlist,
+                     generate_playlist_tracks)
 
 app = Flask(__name__)
 app.secret_key = "dev"
@@ -75,6 +73,14 @@ def show_profile():
     if "user_email" in session:
         email = session["user_email"]
         user = crud.get_user_by_email(email)
+        
+        TODO: create func in crud, 
+        TODO: import choice from random
+        TODO: pass playlist via jinja & render template
+        
+        playlist = choice(crud.get_playlists_by_user(arg=user))
+
+
         return render_template("profile.html")
 
     else:
@@ -109,17 +115,6 @@ def initiate_web_scrape():
     url = playlist["external_urls"]["spotify"]
     return {"spotify_url": url}
     # return redirect(url)
-
-
-# def change_display():
-#     """change display from input to carousel"""
-# select random msg from playlists table
-# select_msg =
-
-
-# @app.route("/view-existing-playlists")
-# page where user views existing playlists
-# run query to show existing playlist objects for user
 
 
 if __name__ == "__main__":
