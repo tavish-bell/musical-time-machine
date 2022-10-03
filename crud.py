@@ -2,6 +2,7 @@
 
 
 import datetime
+import random
 
 from model import Playlist, Track, User, connect_to_db, db
 
@@ -46,6 +47,18 @@ def make_track(song, artist):
 
     return track
 
+
+def get_all_playlists():
+    """Returns playlists"""
+    playlists = Playlist.query.all()
+
+    return playlists
+
+
+# TODO: write func "get all playlists";
+# TODO:call func in server.py in route that renders template where carousel is;
+# TODO: pass lists of playlists to rendered template func "render template(arg=name of html, playlists=playlists);
+# TODO: inside of jinja template, will have access to list of playlists--> loop over list and get attributes out of it (playlists where msgs exist)
 
 if __name__ == "__main__":
     from server import app

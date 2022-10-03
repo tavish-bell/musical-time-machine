@@ -6,6 +6,7 @@ document.querySelector("#user-date").addEventListener("submit", (evt) => {
   document.querySelector("#top-div-heading").style.display = "none";
   document.querySelector("#loading-gif").style.display = "block";
   document.querySelector("#top-section").style.display = "none";
+  document.querySelector(".flash-message").style.display = "none";
 
   const formObject = {
     date: document.querySelector("#date").value,

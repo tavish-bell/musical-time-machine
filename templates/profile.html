@@ -34,19 +34,22 @@ alt="loading bar"/>
 </section>
 
 <section class="carousel-section" id="musical-messages" style="display:none;">
-  <a id="finished-playlist" target="_blank" style="display:none;">Your finished playlist is ready...</a>
+  <a id="finished-playlist" target="_blank" style="display:none;">🎉🎉🎉Your finished playlist is ready...🎉🎉🎉</a>
   <div id="carousel" class="carousel slide" data-ride="false">
     <div class="carousel-inner">
       <div class="carousel-item active container-fluid">
-        TODO: get message/date from db via query
-        <h2 class="musical-message-text">MESSSAGE VIA QUERY GOES HERE.</h2>
-        <em>DATE VIA QUERY GOES HERE</em>
+        <h2 class="musical-message-text"> 
+          Check out other people's musical love letters...</h2>
       </div>
-      TODO: get message/date from db via query
-      <div class="carousel-item container-fluid">
-        <h2 class="musical-message-text">MESSSAGE VIA QUERY GOES HERE.</h2>
-        <em>DATE VIA QUERY GOES HERE</em>
-      </div>
+      {% for playlist in playlists %}
+          {% if playlist.message %}
+          <div class="carousel-item container-fluid">
+            <h2 class="musical-message-text">
+              {{playlist.message}}</h2>
+            <em>{{playlist.selected_date}}</em>
+          </div>
+          {% endif %}
+      {% endfor %}
     </div>
     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
   <span class="carousel-control-prev-icon"></span>
