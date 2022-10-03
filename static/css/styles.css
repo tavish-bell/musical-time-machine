@@ -102,7 +102,8 @@ body {
 
   .middle-container {
     background-color: #F9F9C5;
-    margin: 100px 0;
+    margin: 0;
+    padding-top: 100px;
     
 }
 
