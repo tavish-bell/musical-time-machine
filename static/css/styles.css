@@ -198,6 +198,11 @@ body {
     bottom: 200px;
 }
 
+.headphone-img {
+  width: 10%;
+  filter: invert(1);
+}
+
 /* Loading gif */
 
 .loading-gif {

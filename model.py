@@ -22,7 +22,6 @@ class User(db.Model):
         return f"<User user_id={self.user_id} email={self.email}>"
 
 
-# stretch goal: get Spotify playlist id and integrate into playlists table
 class Playlist(db.Model):
     """a playlist"""
 
