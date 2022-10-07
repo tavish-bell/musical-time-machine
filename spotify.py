@@ -34,6 +34,7 @@ def generate_playlist_tracks(date):
 
     artist_names = [name.getText().strip("\n\t") for name in artists]
     song_and_artist = dict(zip(song_titles, artist_names))
+
     print(f"song and artist: {song_and_artist}")
     return song_and_artist
 

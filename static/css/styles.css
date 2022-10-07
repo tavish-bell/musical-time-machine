@@ -1,4 +1,4 @@
-  /* Elements */
+  /* elements */
 
 html {
   margin:0;
@@ -28,7 +28,7 @@ body {
   }
 
   
-  /* Headings */
+  /* headings */
   
   .big-heading {
     font-family: "Montserrat-Black";
@@ -41,10 +41,20 @@ body {
     line-height: 1.5;
   }
 
+  #top-div-heading {
+    color: #66BFBF;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625rem;
+    margin: 0 auto 0 auto;
+    padding-top: 100px;
+    
+  }
   #header-text {
     width: 35%;
     margin: auto;
+    margin-bottom: 10px;
     padding-top: 50px;
+
       
   }
 
@@ -61,10 +71,10 @@ body {
     font-size: 2rem;
     font-weight: normal;
   }
+ 
 
 
-  /* Containers */
-
+  /* carousel */
   .container-fluid{
     padding: 7% 15%;
   }
@@ -85,20 +95,14 @@ body {
     margin: 20px;
   }
 
+  /* top container  */
   #top-section {
     background-color: #D9F8C4;
     padding-top: 100px;
     position: relative;
   }
 
-  #top-div-heading {
-    color: #66BFBF;
-    font-family: 'Sacramento', cursive;
-    font-size: 5.625rem;
-    margin: 0 auto 0 auto;
-    padding-top: 100px;
-    
-  }
+  
 /* middle container  */
 
   .middle-container {
@@ -117,6 +121,15 @@ body {
   margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
+}
+
+hr {
+  border-style: none;
+  border-top-style: dotted;
+  border-width: 6px;
+  color: #EAF6F6;
+  width: 4%;
+  margin: auto;
 }
 
 .create-account {
@@ -142,13 +155,30 @@ body {
 .footer-container {
   background-color: #F37878;
   padding: 50px 0 20px;
-  
-  
+}
+
+.footer-link:hover {
+  color: #FFB4B4;
+}
+
+.copyright {
+  color: #FFB4B4;
+  font-size: 0.75rem;
+  padding: 20px 0;
 }
 
 
+/* icons  */
+.social-icon {
+  margin: 20px 10px;
+}
 
-  /* Form Components  */
+.social-icon:hover{
+  color: #F7EC09
+}
+
+
+  /* user input form  */
   .date-selection {
     width: 50%;
     margin-top: 50px;
@@ -171,7 +201,7 @@ body {
  }
 
 
-  /* Images */
+  /* images */
   .date-img {
     width: 25%;
     border-radius: 180px; 
@@ -203,8 +233,7 @@ body {
   filter: invert(1);
 }
 
-/* Loading gif */
-
+/* loading gif */
 .loading-gif {
   margin-top: 50px;
   margin-bottom: 10px;
@@ -213,10 +242,7 @@ body {
  
 }
 
-
-
-  /* Form Submit Button  */
-
+  /* submit buttons  */
   .form-submit-button {
     background: #11cdd4;
     background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
@@ -270,35 +296,3 @@ body {
     background-image: linear-gradient(to bottom, #30e3cb,  #2bc4ad);
     text-decoration: none;
   }
-
-  
-  .footer-link:hover {
-    color: #FFB4B4;
-}
-
-.copyright {
-    color: #FFB4B4;
-    font-size: 0.75rem;
-    padding: 20px 0;
-
-    
-
-}
-/* Icons  */
-.social-icon {
-  margin: 20px 10px;
-}
-
-.social-icon:hover{
-  color: #F7EC09
-}
-
-
-hr {
-  border-style: none;
-  border-top-style: dotted;
-  border-width: 6px;
-  color: #EAF6F6;
-  width: 4%;
-  margin: auto;
-}
