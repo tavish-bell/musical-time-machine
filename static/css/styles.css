@@ -29,26 +29,13 @@ body {
 
   
   /* headings */
-  
-  .big-heading {
-    font-family: "Montserrat-Black";
-    font-size: 3.5rem;
-    line-height: 1.5;
-  }
-  
+
   .section-heading {
     font-size: 3rem;
     line-height: 1.5;
   }
 
-  #top-div-heading {
-    color: #66BFBF;
-    font-family: 'Sacramento', cursive;
-    font-size: 5.625rem;
-    margin: 0 auto 0 auto;
-    padding-top: 100px;
-    
-  }
+
   #header-text {
     width: 35%;
     margin: auto;
@@ -72,30 +59,17 @@ body {
     font-weight: normal;
   }
  
-
-
-  /* carousel */
-  .container-fluid{
-    padding: 7% 15%;
-  }
-
-  #musical-messages {
-    background-color: #ef8172;
-  }
-  
-  .musical-message-text {
-    font-size: 3rem;
-    line-height: 1.5;
-    color: #F9F9C5;
-  }
-  
-  .message-image-image {
-    width: 10%;
-    border-radius: 100%;
-    margin: 20px;
-  }
-
   /* top container  */
+
+  #top-div-heading {
+    color: #66BFBF;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625rem;
+    margin: 0 auto 0 auto;
+    padding-top: 100px;
+    
+  }
+
   #top-section {
     background-color: #D9F8C4;
     padding-top: 100px;
@@ -150,6 +124,30 @@ hr {
 .log-in {
   display: inline-block;
 }
+
+
+  /* carousel */
+  .container-fluid{
+    padding: 7% 15%;
+  }
+
+  #musical-messages {
+    background-color: #ef8172;
+  }
+  
+  .musical-message-text {
+    font-size: 3rem;
+    line-height: 1.5;
+    color: #F9F9C5;
+  }
+  
+  .message-image-image {
+    width: 10%;
+    border-radius: 100%;
+    margin: 20px;
+  }
+
+  
 
 /* footer  */
 .footer-container {
