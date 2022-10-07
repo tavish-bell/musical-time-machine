@@ -87,7 +87,6 @@ def show_profile():
 @app.route("/api/generate-playlist")
 def initiate_web_scrape():
     """generate playlist given user selected date"""
-    print("*" * 20)
     spotipy_scope = "playlist-modify-private"
     date = request.args.get("date")
     message = request.args.get("message")

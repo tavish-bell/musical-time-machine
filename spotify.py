@@ -48,6 +48,7 @@ def build_spotify_playlist(sp, songs_and_artists, date):
 
     playlist = sp.user_playlist_create(
         user=user_id,
+        # TODO: add msg?
         name=f"{date} Billboard 100",
         public=False,
     )
