@@ -1,7 +1,6 @@
 document.querySelector("#user-date").addEventListener("submit", (evt) => {
   evt.preventDefault();
   document.querySelector("#user-date").style.display = "none";
-  console.log(evt);
   document.querySelector("#header-text").style.display = "none";
   document.querySelector("#musical-messages").style.display = "block";
   document.querySelector("#top-div-heading").style.display = "none";
@@ -12,8 +11,6 @@ document.querySelector("#user-date").addEventListener("submit", (evt) => {
     date: document.querySelector("#date").value,
     message: document.querySelector("#message").value,
   };
-
-  console.log(formObject);
 
   const queryString = new URLSearchParams(formObject).toString();
 
