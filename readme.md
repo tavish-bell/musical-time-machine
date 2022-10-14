@@ -59,4 +59,4 @@ localhost:5000
 
 ## Author
 
-Tavish Bell is a software engineer that lives in Bellingham, WA
+[Tavish Bell](https://www.linkedin.com/in/tavish-b-268b36235/) is a software engineer that lives in Bellingham, WA
