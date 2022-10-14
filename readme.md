@@ -1,9 +1,9 @@
 # Musical Time Machine
 
-an app that takes a user-selected date then uses this
+An app that takes a user-selected date then uses that
 date to scrape the Billboard Top 100 website for the songs
 that were most popular on this day and then generate a Spotify
-playlist.
+playlist of those songs.
 
 ## Technologies used
 
@@ -33,7 +33,7 @@ pip3 install -r requirements.txt
 
 ### Make sure you have PostgreSQL running
 
-if you are on a windows machine you may need to clear any stale pid files using the following command:
+If you are on a Windows machine you may need to clear any stale pid files using the following command:
 
 ```sh
 sudo pg_ctlcluster 13 main start
