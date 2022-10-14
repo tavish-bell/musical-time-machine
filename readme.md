@@ -52,10 +52,6 @@ Verify the deployment by navigating to your server address in your preferred bro
 localhost:5000
 ```
 
-## Make account/login, go back in time
-
-[screenshot]: (/blob/main/static/css/images/screenshot.jpg)
-
 ## License
 
 [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/): This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator.
