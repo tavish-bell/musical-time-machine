@@ -1,4 +1,4 @@
-"""Create Replace Update Delete operations."""
+"""Create Replace Update Delete operations"""
 
 
 import datetime
@@ -16,7 +16,7 @@ def create_user(email, password):
 
 
 def get_user_by_id(user_id):
-    """Return user by user_id/"""
+    """Return user by user_id"""
 
     return User.query.get(user_id)
 

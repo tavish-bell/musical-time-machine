@@ -48,7 +48,7 @@ def create_user():
 
 @app.route("/login", methods=["POST"])
 def user_login():
-    """Show login form.
+    """Show login form
 
     Pull data from login form"""
 

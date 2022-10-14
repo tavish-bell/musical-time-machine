@@ -1,3 +1,5 @@
+"""functions related to web scraping & Spotify API"""
+
 import json
 import re
 from os import environ
@@ -13,7 +15,7 @@ from model import *
 
 def generate_playlist_tracks(date):
     """
-    web scrape Billboard site
+    web scrape Billboard site, munge data
 
 
     return list of song titles/artists as dict
@@ -21,11 +23,8 @@ def generate_playlist_tracks(date):
 
     URL = f"https://www.billboard.com/charts/hot-100/{date}/"
     response = requests.get(URL)
-    # raw html content
     billboard_data = response.text
-    # specifying html parser
     soup = BeautifulSoup(billboard_data, "html.parser")
-    # soup.find_all finds all divs with same class
     songs = soup.find_all(name="h3", id="title-of-a-story", class_="u-line-height-125")
 
     song_titles = [title.getText().strip("\n\t") for title in songs]
@@ -49,7 +48,6 @@ def build_spotify_playlist(sp, songs_and_artists, date):
 
     playlist = sp.user_playlist_create(
         user=user_id,
-        # TODO: add msg?
         name=f"{date} Billboard 100",
         public=False,
     )
@@ -60,6 +58,9 @@ def build_spotify_playlist(sp, songs_and_artists, date):
 def add_songs_to_spotify_playlist(
     sp, playlist, song_and_artist, selected_date, dB_user_id, db, message
 ):
+    """
+    use song data from web scrape to search Spotify for specified tracks and generate playlist
+    """
 
     user_id = sp.current_user()["id"]
     song_uris = []
