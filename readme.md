@@ -23,7 +23,7 @@ playlist.
 
 This app has not yet been deployed, so here is how to run the app locally on your machine.
 
-#### Create and activate a Python virtual enrivonment and install dependencies
+### Create and activate a Python virtual enrivonment and install dependencies
 
 ```sh
 virtualenv env
@@ -31,7 +31,7 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-#### Make sure you have PostgreSQL running
+### Make sure you have PostgreSQL running
 
 if you are on a windows machine you may need to clear any stale pid files using the following command:
 
@@ -39,7 +39,7 @@ if you are on a windows machine you may need to clear any stale pid files using 
 sudo pg_ctlcluster 13 main start
 ```
 
-#### Load the shell script and run the file
+### Load the shell script and run the file
 
 ```sh
 source secrets.sh
