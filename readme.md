@@ -54,7 +54,7 @@ localhost:5000
 
 ## Screencap
 
-[external link](https://www.youtube.com/watch?v=3ncAnf3VDeE&feature=youtu.be)
+[YouTube video that shows the program working](https://www.youtube.com/watch?v=3ncAnf3VDeE&feature=youtu.be)
 
 ## License
 
